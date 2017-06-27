@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.childfund.domain.BoardVO;
 import org.childfund.domain.Criteria;
+import org.childfund.domain.SearchCriteria;
 import org.childfund.persistence.BoardDAO;
 import org.springframework.stereotype.Service;
 
@@ -51,5 +52,17 @@ public class BoardServiceImpl implements BoardService {
 	public int listCountCriteria(Criteria cri) throws Exception {
 		return dao.countPaging(cri);
 	}
+
+	@Override
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+		return dao.listSearch(cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		return dao.listSearchCount(cri);
+	}
+	
+	
 
 }

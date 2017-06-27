@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.childfund.domain.BoardVO;
 import org.childfund.domain.Criteria;
+import org.childfund.domain.SearchCriteria;
 
 public interface BoardDAO {
 
@@ -22,5 +23,9 @@ public interface BoardDAO {
 	List<BoardVO> listCriteria(Criteria cri) throws Exception;
 	
 	int countPaging(Criteria cri) throws Exception;
+	
+	List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
+	
+	int listSearchCount(SearchCriteria cri) throws Exception;
 
 }
